@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alternate Timeline Songsmith</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <h1>Alternate Timeline Songsmith</h1>
+        <p class="subhead">
+          Build high-control prompts and output scaffolds for alternate-universe songs.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Session Setup</h2>
+        <div class="grid">
+          <label>
+            Artist
+            <input id="artist" type="text" placeholder="Target artist voice" />
+          </label>
+          <label>
+            Album / Era
+            <input id="albumEra" type="text" placeholder="Album, year, or era" />
+          </label>
+          <label>
+            Year
+            <input id="year" type="text" placeholder="e.g., 1997" />
+          </label>
+          <label>
+            Scene / City
+            <input id="city" type="text" placeholder="e.g., Seattle" />
+          </label>
+          <label>
+            Genre
+            <input id="genre" type="text" placeholder="e.g., alt rock" />
+          </label>
+          <label>
+            Song concept seed
+            <input id="concept" type="text" placeholder="Core emotional/lyrical premise" />
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Output Controls</h2>
+        <div class="grid">
+          <label>
+            Workflow mode
+            <select id="workflowMode">
+              <option value="guided">Guided (DNA → Lyrics → Description)</option>
+              <option value="full">All sections in one response</option>
+            </select>
+          </label>
+          <label>
+            Lyrical intensity
+            <select id="intensity">
+              <option>Restrained</option>
+              <option selected>Balanced</option>
+              <option>Abrasive</option>
+              <option>Theatrical</option>
+            </select>
+          </label>
+          <label>
+            Hook strategy
+            <select id="hookStyle">
+              <option>Single repeated phrase</option>
+              <option>Escalating refrain</option>
+              <option>Counter-melody hook</option>
+              <option>Gang-vocal response</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Banned Word Guardrail</h2>
+        <textarea id="draftInput" rows="5" placeholder="Paste generated lyrics or description here to scan for banned terms..."></textarea>
+        <div class="actions">
+          <button id="scanBtn">Scan for banned language</button>
+          <button id="clearBtn" class="secondary">Clear</button>
+        </div>
+        <pre id="scanResults" class="output"></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Prompt Composer</h2>
+        <div class="actions">
+          <button id="buildPromptBtn">Build Master Prompt</button>
+          <button id="copyBtn" class="secondary">Copy Prompt</button>
+        </div>
+        <pre id="promptOutput" class="output"></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Response Scaffold</h2>
+        <div class="actions">
+          <button id="buildScaffoldBtn">Generate Section Scaffold</button>
+        </div>
+        <pre id="scaffoldOutput" class="output"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
